@@ -92,6 +92,12 @@
     <ClInclude Include="HttpCookie.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\include\system.h">
+      <Filter>curl\include</Filter>
+    </ClInclude>
     <ClInclude Include="json\include\allocator.h">
       <Filter>json\include</Filter>
     </ClInclude>
@@ -113,6 +119,9 @@
     <ClInclude Include="json\include\json.h">
       <Filter>json\include</Filter>
     </ClInclude>
+    <ClInclude Include="json\include\json_features.h">
+      <Filter>json\include</Filter>
+    </ClInclude>
     <ClInclude Include="json\include\reader.h">
       <Filter>json\include</Filter>
     </ClInclude>
@@ -125,19 +134,13 @@
     <ClInclude Include="json\include\writer.h">
       <Filter>json\include</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="curl\include\system.h">
-      <Filter>curl\include</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="json\lib\jsoncpp.lib">
-      <Filter>json\lib</Filter>
-    </Library>
     <Library Include="curl\lib\libcurl.lib">
       <Filter>curl\lib</Filter>
+    </Library>
+    <Library Include="json\lib\jsoncpp.lib">
+      <Filter>json\lib</Filter>
     </Library>
   </ItemGroup>
 </Project>

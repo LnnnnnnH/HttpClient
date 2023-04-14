@@ -3,9 +3,10 @@
 
 using namespace xnet;
 
-std::atomic<int> Thread::numCreated_ = 0;
+//std::atomic<int> Thread::numCreated_ = 0;
+std::atomic<int> Thread::numCreated_(0);
 
-Thread::Thread(const ThreadFunc& func, const std::string& name):
+Thread::Thread(const ThreadFunc& func, const std::string& name) :
 	func_(func),
 	name_(name),
 	started_(false),
@@ -15,12 +16,12 @@ Thread::Thread(const ThreadFunc& func, const std::string& name):
 	if (name_.empty())
 	{
 		char buf[32];
-		_snprintf_s(buf, sizeof buf, "Thread%d", numCreated_);
+		_snprintf_s(buf, sizeof buf, "Thread%d", numCreated_.load());
 		name_ = buf;
 	}
 }
 
-Thread::Thread(ThreadFunc&& func, const std::string& name):
+Thread::Thread(ThreadFunc&& func, const std::string& name) :
 	func_(std::move(func)),
 	name_(name),
 	started_(false),
@@ -30,7 +31,7 @@ Thread::Thread(ThreadFunc&& func, const std::string& name):
 	if (name_.empty())
 	{
 		char buf[32];
-		_snprintf_s(buf, sizeof buf, "Thread%d", numCreated_);
+		_snprintf_s(buf, sizeof buf, "Thread%d", numCreated_.load());
 		name_ = buf;
 	}
 }
