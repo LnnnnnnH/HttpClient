@@ -2,6 +2,7 @@
 #include "HttpClient.h"
 #include <memory>
 #include <curl.h>
+
 using namespace xnet;
 
 static size_t writeCallback(void* data, size_t size, size_t nMember, void* stream)
